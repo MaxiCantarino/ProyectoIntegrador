@@ -19,10 +19,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `artista`
+-- Estructura de tabla para la tabla `insumos`
 --
 
-CREATE TABLE `artista` (
+CREATE TABLE `Productos` (
   `id_artista` int(11) NOT NULL,
   `nombre_apellido` varchar(100) NOT NULL,
   `telefono` int(11) DEFAULT NULL,
@@ -92,10 +92,10 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Indices de la tabla `artista`
+-- Indices de la tabla `insumos`
 --
-ALTER TABLE `artista`
-  ADD PRIMARY KEY (`id_artista`),
+ALTER TABLE `insumos`
+  ADD PRIMARY KEY (`id_insumos`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_categoria` (`id_categoria`),
   ADD KEY `id_pedido` (`id_pedido`);
@@ -131,9 +131,9 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `artista`
+-- AUTO_INCREMENT de la tabla `insumos`
 --
-ALTER TABLE `artista`
+ALTER TABLE `insumos`
   MODIFY `id_artista` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -165,12 +165,12 @@ ALTER TABLE `usuario`
 --
 
 --
--- Filtros para la tabla `artista`
+-- Filtros para la tabla `insumos`
 --
-ALTER TABLE `artista`
-  ADD CONSTRAINT `artista_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `artista_ibfk_2` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`),
-  ADD CONSTRAINT `artista_ibfk_3` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`);
+ALTER TABLE `insumos`
+  ADD CONSTRAINT `insumos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `insumos_ibfk_2` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`),
+  ADD CONSTRAINT `insumos_ibfk_3` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`);
 
 --
 -- Filtros para la tabla `login`
